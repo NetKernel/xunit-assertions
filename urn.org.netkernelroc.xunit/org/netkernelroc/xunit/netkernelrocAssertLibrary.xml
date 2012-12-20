@@ -332,4 +332,15 @@
     <argument name="test">arg:test:tagValue</argument>
   </assertDefinition>
 
+  <!-- RDF Assertions -->
+  <assertDefinition name="rdfTripleCount">
+    <identifier>active:assertRDF</identifier>
+    <argument name="response">arg:test:response</argument>
+    <argument name="result">arg:test:result</argument>
+    <argument name="tagValue">arg:test:tagValue</argument>
+    <argument name="testName">
+      <literal type="string">TripleCount</literal>
+    </argument>
+  </assertDefinition>
+
 </testlist>

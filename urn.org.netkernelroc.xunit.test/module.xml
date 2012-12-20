@@ -17,6 +17,39 @@
 
   <rootspace name="NetKernelROC / XUnit / Assertions / Test" public="true" uri="urn:org:netkernelroc:xunit:test">
 
+    <mapper>
+      <config>
+        <endpoint>
+          <grammar>rdf:/<group name="rep"><regex type="anything"/></group></grammar>
+          <request>
+            <identifier>active:groovy</identifier>
+            <argument name="operator">
+              <literal type="string">
+                //String resource = context.source("arg:rep", String.class)
+                //String resource = context.getThisRequest().getArgument("rep")
+                //System.out.println(resource)
+                //if ('person.ttl'.equals(resource))
+                //  {
+                  rdf = context.source("res:/resources/representations/person.ttl", String.class)
+                  response = context.createResponseFrom(rdf)
+                  response.setMimeType("text/turtle")
+                //  }
+              </literal>
+            </argument>
+          </request>
+        </endpoint>
+      </config>
+      <space>
+        <import>
+          <uri>urn:org:netkernel:lang:groovy</uri>
+        </import>
+        <fileset>
+          <regex>res:/resources/representations/person.ttl</regex>
+        </fileset>
+      </space>
+    </mapper>
+
+
     <fileset>
       <regex>res:/etc/system/Tests.xml</regex>
     </fileset>

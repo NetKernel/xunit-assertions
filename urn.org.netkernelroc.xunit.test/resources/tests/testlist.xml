@@ -77,6 +77,17 @@
     </assert>
   </test>
 
+
+  <test name="RDF assertion testing">
+    <request>
+      <identifier>rdf:/person.ttl</identifier>
+    </request>
+    <assert>
+      <rdfTripleCount>4</rdfTripleCount>
+    </assert>
+  </test>
+
+
   <!-- Uncomment to include this HTML content test -->
   <!--
   <test name="Does BestBuy.com have a single head element?">

@@ -58,6 +58,22 @@
     </endpoint>
 
     <endpoint>
+      <id>netkernelroc:assert:RDF</id>
+      <name>RDF Assert</name>
+      <description>Provides assertions for RDF</description>
+      <grammar>
+        <active>
+          <identifier>active:assertRDF</identifier>
+          <argument name="response" min="1" max="1" desc="request response under test"/>
+          <argument name="result" min="1" max="1" desc="request result under test"/>
+          <argument name="tagValue" min="1" max="1" desc="tag Value for test"/>
+          <argument name="testName" min="1" max="1" desc="name of requested assertion test"/>
+        </active>
+      </grammar>
+      <class>org.netkernelroc.xunit.endpoint.RDFAssert</class>
+    </endpoint>
+
+    <endpoint>
       <id>netkernelroc:assert:image</id>
       <name>Image Assert</name>
       <description>Provides a set of assertions for Images</description>
@@ -85,7 +101,9 @@
     <import>
       <uri>urn:org:netkernel:util:image</uri>
     </import>
-
+    <import>
+      <uri>urn:org:netkernel:rdf:jena</uri>
+    </import>
     <import>
       <uri>urn:org:netkernel:json:core</uri>
     </import>

@@ -23,6 +23,13 @@
  	</doc>
 
   <doc>
+ 		<id>urn:org:netkernelroc:xunit:assertRDF</id>
+ 		<title>RDF assertions</title>
+    <desc>Performs assertions on RDF representation such as ????</desc>
+ 		<uri>res:/org/netkernelroc/xunit/doc/doc_assertRDF.txt</uri>
+ 	</doc>
+
+  <doc>
  		<id>urn:org:netkernelroc:xunit:css-license</id>
  		<title>CSS-Selector license</title>
     <desc>License for the CSS-Selector being used</desc>
