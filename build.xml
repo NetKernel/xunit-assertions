@@ -89,6 +89,7 @@
       <fileset dir="lib">
         <include name="netkernel/lib/*.jar"/>
         <include name="netkernel/modules/*.jar"/>
+        <include name="netkernel/packages/rdf-jena-*/expanded/modules/expanded/urn.org.netkernel.rdf.jena*/lib/*.jar"/>
       </fileset>
     </path>
 
