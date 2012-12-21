@@ -3,6 +3,9 @@
 
 = XML Structure Assertions using CSS Selectors =
 
+Provides an assertion to validate the structure of an XML document using CSS3 selectors.
+If you need to validate the content of an XML document, please see the
+[doc:mod:xml:core:assert:library|XPath validator].
 
 == Setup ==
 To use the XML structure assertions, you must import the module '''urn:org:netkernelroc:xunit'''.

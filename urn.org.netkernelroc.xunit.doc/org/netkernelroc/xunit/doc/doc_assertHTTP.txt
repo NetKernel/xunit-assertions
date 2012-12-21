@@ -2,6 +2,9 @@
 
 = HTTP Protocol Assertions =
 
+Provides assertions that validation facets of the HTTP protocol response to a test request.
+You are able to assert the HTTP return code, headers, etc.
+
 == Setup ==
 To use the HTTP protocol assertions, you must import the module '''urn:org:netkernelroc:xunit'''.
 

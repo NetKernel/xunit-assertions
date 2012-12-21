@@ -1,8 +1,18 @@
-{endpoint}netkernelroc:assert:RDF{/endpoint}
 
+= RDF Assertions =
 
+Provides assertions for validating RDF representations.
 
-The Test list must import the test library:
+== Setup ==
+To use the RDF assertions, you must import the module '''urn:org:netkernelroc:xunit'''.
+
+{xml}
+<import>
+  <uri>urn:org:netkernelroc:xunit</uri>
+</import>
+{/xml}
+
+and import the test library in your testlist document:
 
 {xml}
 <testlist>
@@ -10,40 +20,35 @@ The Test list must import the test library:
 </testlist>
 {/xml}
 
-An example test would look like this:
+== Assertions ==
+
+* '''tripleCount''' - asserts the number of RDF triples in the returned representation.
+
+== Examples ==
+
+An example test could use the following XML document
+
+
+{literal}
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/stuff/1.0/> .
+
+<http://www.w3.org/TR/rdf-syntax-grammar>
+  dc:title "RDF/XML Syntax Specification (Revised)" ;
+  ex:editor [
+    ex:fullname "Dave Beckett";
+    ex:homePage <http://purl.org/net/dajobe/>
+  ] .
+{/literal}
+
+and would have the following assertions be true:
 
 {xml}
-<testlist>
-  <import>res:/org/netkernelroc/netkernel/xunit/assertions/netkernelrocAssertLibrary.xml</import>
-
-  <test>
-  <request>
-    <identifier>res:/myRDF</identifier>
-  </request>
-  <assert>
-    <rdfTripleCount>40</rdfTripleCount>
-  </assert>
-  </test>
-</testlist>
+<rdf>
+  <assertions>
+    <tripleCount>4</tripleCount>
+  </assertions>
+</rdf>
 {/xml}
-
-This test issues a request ...
-
-The library contains one assertion for each standard response header as well
-as the return code.
-Each test can be for just the existence of the header information as
-well as the specific contents.
-When testing for the contents, the test first attempts a strict string
-comparison and if that fails, it interprets the string as regular expression
-and attempts the test again.
-
-All assertions work the same way and some of them have detailed documentation below.
-
-
-The library supplies the following additional assertions:
-
-=== rdfTripleCount ===
-
-The RDF representation can be examined for the total number of triple.
-
 

@@ -66,8 +66,7 @@
           <identifier>active:assertRDF</identifier>
           <argument name="response" min="1" max="1" desc="request response under test"/>
           <argument name="result" min="1" max="1" desc="request result under test"/>
-          <argument name="tagValue" min="1" max="1" desc="tag Value for test"/>
-          <argument name="testName" min="1" max="1" desc="name of requested assertion test"/>
+          <argument name="test" min="1" max="1" desc="name of requested assertion test"/>
         </active>
       </grammar>
       <class>org.netkernelroc.xunit.endpoint.RDFAssert</class>

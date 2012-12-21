@@ -83,7 +83,11 @@
       <identifier>rdf:/person.ttl</identifier>
     </request>
     <assert>
-      <rdfTripleCount>4</rdfTripleCount>
+      <rdf>
+        <assertions>
+          <tripleCount>4</tripleCount>
+        </assertions>
+      </rdf>
     </assert>
   </test>
 

@@ -7,6 +7,7 @@ import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import org.netkernel.layer0.nkf.INKFRequestContext;
 import org.netkernel.layer0.nkf.INKFResponseReadOnly;
+import org.netkernel.layer0.representation.IHDSNode;
 import org.netkernel.layer0.representation.IReadableBinaryStreamRepresentation;
 import org.netkernel.module.standard.endpoint.StandardAccessorImpl;
 
@@ -23,23 +24,17 @@ public class RDFAssert extends StandardAccessorImpl
   @Override
   public void onSource(INKFRequestContext context) throws Exception
     {
-    Boolean result = Boolean.FALSE;
+    StringBuilder expected = new StringBuilder();
+    StringBuilder received = new StringBuilder();
+
+    Boolean result = Boolean.TRUE;
+
+
     INKFResponseReadOnly response = context.source("arg:response", INKFResponseReadOnly.class);
-    String rdf = context.source("arg:result", String.class);
-    String tagValue = context.source("arg:tagValue", String.class);
-    String testName = context.source("arg:testName", String.class);
-
     String mimeType = response.getMimeType();
-
-    System.out.println(rdf);
-    System.out.println(mimeType);
-    System.out.println(tagValue);
-    System.out.println(testName);
 
     IReadableBinaryStreamRepresentation irbsr = context.source("arg:result", IReadableBinaryStreamRepresentation.class);
     InputStream is = irbsr.getInputStream();
-
-    //RIOT.init();
 
     Model model = ModelFactory.createDefaultModel(); // creates an in-memory Jena Model
     // Read and parse the model based on the mimeType
@@ -52,25 +47,37 @@ public class RDFAssert extends StandardAccessorImpl
       model.read(is, null, "TURTLE"); // parses an InputStream assuming RDF in Turtle format
       }
 
-    // Determine the requested test
-    if ("TripleCount".equals(testName))
+
+    IHDSNode assertions = context.source("arg:test", IHDSNode.class);
+
+    for (IHDSNode assertion : assertions.getNodes("/assertions/*"))
       {
-      int testCount = Integer.parseInt(tagValue);
-      StmtIterator iter = model.listStatements();
-      int statementCounter = 0;
-      while (iter.hasNext() )
+      String test = assertion.getName();
+      String value = (String) assertion.getValue();
+
+      // Determine the requested test
+      if ("tripleCount".equals(test))
         {
-        Statement statement = iter.next();
-        System.out.println("[" + statement.getSubject() + "] [" + statement.getPredicate() + "] [" +statement.getObject() + "]");
-        statementCounter = statementCounter + 1;
+        int testCount = Integer.parseInt(value);
+        StmtIterator iter = model.listStatements();
+        int statementCounter = 0;
+        while (iter.hasNext())
+          {
+          Statement statement = iter.next();
+          System.out.println("[" + statement.getSubject() + "] [" + statement.getPredicate() + "] [" + statement.getObject() + "]");
+          statementCounter = statementCounter + 1;
+          }
+        if (testCount != statementCounter)
+          {
+          result = Boolean.FALSE;
+          expected.append(" count=" + testCount);
+          received.append(" count=" + statementCounter);
+          }
         }
-
-      System.out.println("There are [" + statementCounter + "] statements.");
-      result = statementCounter == testCount ? Boolean.TRUE : Boolean.FALSE;
       }
+    context.sink("active:assert/Expected", expected.toString());
+    context.sink("active:assert/Received", received.toString());
 
-//    IHDSNode assertions = context.source("arg:testValue", IHDSNode.class);
-
-    context.createResponseFrom(result);
+    context.createResponseFrom(result).setNoCache();
     }
   }

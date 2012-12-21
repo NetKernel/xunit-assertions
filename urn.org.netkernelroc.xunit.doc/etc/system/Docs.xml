@@ -3,29 +3,32 @@
 
   <doc>
  		<id>urn:org:netkernelroc:xunit:guide</id>
- 		<title>NetKernelROC XUnit assertion library</title>
+ 		<title>XUnit Assertion Guide</title>
     <desc>Provides a set of XUnit assertions</desc>
  		<uri>res:/org/netkernelroc/xunit/doc/doc_guide.txt</uri>
  	</doc>
 
   <doc>
  		<id>urn:org:netkernelroc:xunit:assertHTTP</id>
- 		<title>HTTP protocol assertions</title>
-    <desc>Performs HTTP assertions such as headers, return codes, etc.</desc>
+ 		<title>HTTP protocol</title>
+    <desc>Assertions on the HTTP protocol response</desc>
+    <keywords>HTTP protocol</keywords>
  		<uri>res:/org/netkernelroc/xunit/doc/doc_assertHTTP.txt</uri>
  	</doc>
 
   <doc>
  		<id>urn:org:netkernelroc:xunit:assertCSS</id>
- 		<title>XML structure assertions</title>
+ 		<title>XML structure</title>
     <desc>Validate XML structure with CSS selectors</desc>
+    <keywords>XML validate CSS</keywords>
  		<uri>res:/org/netkernelroc/xunit/doc/doc_assertCSS.txt</uri>
  	</doc>
 
   <doc>
  		<id>urn:org:netkernelroc:xunit:assertRDF</id>
- 		<title>RDF assertions</title>
-    <desc>Performs assertions on RDF representation such as ????</desc>
+ 		<title>RDF</title>
+    <desc>Assertions for RDF representation</desc>
+    <keywords>RDF, triple</keywords>
  		<uri>res:/org/netkernelroc/xunit/doc/doc_assertRDF.txt</uri>
  	</doc>
 
@@ -45,7 +48,7 @@
 
   <doc>
      <id>urn:org:netkernelroc:xunit:assertImage</id>
-     <title>Image assertions</title>
+     <title>Image</title>
      <keywords>Image</keywords>
      <desc>Performs assertions on an image such as height, width and color</desc>
      <uri>res:/org/netkernelroc/xunit/doc/doc_assertImage.txt</uri>

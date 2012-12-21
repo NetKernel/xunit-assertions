@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <books>
-	<book>
-		<id>book:urn:org:netkernelroc:xunit:book</id>
-		<title>NetKernelROC XUnit Assertions</title>
-		<desc>NetKernelROC XUnit assertion library</desc>
+  <book>
+    <id>book:urn:org:netkernelroc:xunit:book</id>
+    <title>NetKernelROC XUnit Assertions</title>
+    <desc>NetKernelROC XUnit assertion library</desc>
     <icon>res:/org/netkernelroc/xunit/images/icon.png</icon>
-		<toc>
-			<item id="urn:org:netkernelroc:xunit:guide"/>
-      <item id="urn:org:netkernelroc:xunit:assertHTTP"/>
-      <item id="urn:org:netkernelroc:xunit:assertCSS"/>
-      <item id="urn:org:netkernelroc:xunit:assertRDF"/>
-      <item id="urn:org:netkernelroc:xunit:assertImage" />
-      <separator/>
-      <item id="urn:org:netkernelroc:xunit:css-license"/>
-      <item id="urn:org:netkernelroc:xunit:license-mit"/>
-		</toc>
-	</book>
+    <toc>
+      <item id="urn:org:netkernelroc:xunit:guide">
+        <item id="urn:org:netkernelroc:xunit:assertHTTP"/>
+        <item id="urn:org:netkernelroc:xunit:assertCSS"/>
+        <item id="urn:org:netkernelroc:xunit:assertRDF"/>
+        <item id="urn:org:netkernelroc:xunit:assertImage"/>
+        <separator/>
+        <item id="urn:org:netkernelroc:xunit:css-license"/>
+        <item id="urn:org:netkernelroc:xunit:license-mit"/>
+      </item>
+    </toc>
+  </book>
 </books>
