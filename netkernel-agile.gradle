@@ -1,20 +1,24 @@
-apply plugin: 'netkernelBuilder'
+apply plugin: 'groovy'
+apply plugin: 'netkernel'
 
 buildscript {
   repositories {
     mavenLocal()
   }
   dependencies {
-  classpath group: 'net.databliss.gradle.plugins', name: 'gradle-nk-plugin', version: '0.2.0'
+  classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.1-SNAPSHOT'
   }
 }
 
 project.ext {
-  netkernelModules = ["urn:org:netkernelroc:xunit"]
+  netkernelModules = [
+    "urn.org.netkernelroc.xunit", 
+    "urn.org.netkernelroc.xunit.doc",
+    "urn.org.netkernelroc.xunit.test"
+  ]
+  installModules = [
+  "urn.org.netkernelroc.xunit", 
+  "urn.org.netkernelroc.xunit.doc",
+  "urn.org.netkernelroc.xunit.test"
+  ]
 }
-
-
-
-
-
-
