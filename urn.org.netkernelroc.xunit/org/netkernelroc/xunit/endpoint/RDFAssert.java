@@ -46,6 +46,10 @@ public class RDFAssert extends StandardAccessorImpl
       {
       model.read(is, null, "TURTLE"); // parses an InputStream assuming RDF in Turtle format
       }
+    else if ("text/n3".equals(mimeType))
+      {
+      model.read(is, null, "N3"); // parses an InputStream assuming RDF in N3 format
+      }
 
 
     IHDSNode assertions = context.source("arg:test", IHDSNode.class);
