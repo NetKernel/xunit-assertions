@@ -17,10 +17,9 @@ and import the test library in your testlist document:
 
 {xml}
 <testlist>
-  <import>res:/org/netkernelroc/netkernel/xunit/assertions/netkernelrocAssertLibrary.xml</import>
+  <import>res:/org/netkernelroc/xunit/netkernelrocAssertLibrary.xml</import>
 </testlist>
 {/xml}
-
 == Assertions ==
 
 All image assertion tests can be specified within a single image assertion declaration. The valid tests
