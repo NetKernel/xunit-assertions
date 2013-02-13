@@ -10,6 +10,7 @@
         <item id="urn:org:netkernelroc:xunit:assertHTTP"/>
         <item id="urn:org:netkernelroc:xunit:assertCSS"/>
         <item id="urn:org:netkernelroc:xunit:assertRDF"/>
+        <item id="urn:org:netkernelroc:xunit:assertJSON"/>
         <item id="urn:org:netkernelroc:xunit:assertImage"/>
         <separator/>
         <item id="urn:org:netkernelroc:xunit:css-license"/>

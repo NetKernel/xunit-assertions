@@ -73,6 +73,21 @@
     </endpoint>
 
     <endpoint>
+      <id>netkernelroc:assert:JSON</id>
+      <name>JSON Assert</name>
+      <description>Provides assertions for JSON</description>
+      <grammar>
+        <active>
+          <identifier>active:assertJSON</identifier>
+          <argument name="response" min="1" max="1" desc="request response under test"/>
+          <argument name="result" min="1" max="1" desc="request result under test"/>
+          <argument name="test" min="1" max="1" desc="name of requested assertion test"/>
+        </active>
+      </grammar>
+      <class>org.netkernelroc.xunit.endpoint.JSONAssert</class>
+    </endpoint>
+
+    <endpoint>
       <id>netkernelroc:assert:image</id>
       <name>Image Assert</name>
       <description>Provides a set of assertions for Images</description>

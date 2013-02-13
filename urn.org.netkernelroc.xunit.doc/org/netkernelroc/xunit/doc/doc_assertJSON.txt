@@ -1,0 +1,39 @@
+
+= JSON Assertions =
+
+Provides assertions for validating JSON representations.
+
+== Setup ==
+To use the JSON assertions, you must import the module '''urn:org:netkernelroc:xunit'''.
+
+{xml}
+<import>
+  <uri>urn:org:netkernelroc:xunit</uri>
+</import>
+{/xml}
+
+and import the test library in your testlist document:
+
+{xml}
+<testlist>
+  <import>res:/org/netkernelroc/xunit/netkernelrocAssertLibrary.xml</import>
+</testlist>
+{/xml}
+
+== Assertions ==
+
+* '''assertIsJSON''' - asserts that the representation can be converted into a JSONObject instance and hence proves that it is a JSON representation.
+
+== Examples ==
+
+The following test asserts that the returned representation is a JSON document:
+
+{xml}
+<json>
+  <assertions>
+    <assertIsJSON/>
+  </assertions>
+</json>
+{/xml}
+
+

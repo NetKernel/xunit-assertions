@@ -38,7 +38,18 @@
     <argument name="test">arg:test:tagValue</argument>
   </assertDefinition>
 
+  <!-- JSON Assertions -->
+  <assertDefinition name="json">
+    <identifier>active:assertJSON</identifier>
+    <argument name="response">arg:test:response</argument>
+    <argument name="result">arg:test:result</argument>
+    <argument name="test">arg:test:tagValue</argument>
+  </assertDefinition>
+
+
+  <!-- We are probably going to use the same approach as for HTTP -->
   <!--
+
   <assertDefinition name="rdfTripleCount">
     <identifier>active:assertRDF</identifier>
     <argument name="response">arg:test:response</argument>
@@ -49,5 +60,6 @@
     </argument>
   </assertDefinition>
   -->
+
 
 </testlist>

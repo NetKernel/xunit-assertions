@@ -33,6 +33,14 @@
  	</doc>
 
   <doc>
+ 		<id>urn:org:netkernelroc:xunit:assertJSON</id>
+ 		<title>JSON</title>
+    <desc>Assertions for JSON representation</desc>
+    <keywords>JSON</keywords>
+ 		<uri>res:/org/netkernelroc/xunit/doc/doc_assertJSON.txt</uri>
+ 	</doc>
+
+  <doc>
  		<id>urn:org:netkernelroc:xunit:css-license</id>
  		<title>CSS-Selector license</title>
     <desc>License for the CSS-Selector being used</desc>
